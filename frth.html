@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <form id="contactForm">
+      <h1>Contact Us</h1>
+      <div class="form-group">
+        <label for="firstName">First Name *</label>
+        <input type="text" id="firstName" name="firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name *</label>
+        <input type="text" id="lastName" name="lastName" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="queryType">Query Type *</label>
+        <div class="radio-group">
+          <input type="radio" id="general" name="queryType" value="General Enquiry" required>
+          <label for="general">General Enquiry</label>
+          <input type="radio" id="support" name="queryType" value="Support Request" required>
+          <label for="support">Support Request</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <div class="form-group checkbox">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">I hereby consent to being contacted by the team *</label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="successMessage" class="hidden">Message Sent! Thanks for completing the form. We'll be in touch soon!</div>
+  </div>
+  <style>body {
+    font-family: Arial, sans-serif;
+    background-color: #e9f5e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .form-container {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  .checkbox {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox input {
+    margin-right: 10px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1a7a43;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #155f36;
+  }
+  
+  #successMessage {
+    margin-top: 10px;
+    padding: 10px;
+    color: #155f36;
+    background: #e8f5e9;
+    border: 1px solid #155f36;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  </style>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  
+  const successMessage = document.getElementById("successMessage");
+  successMessage.classList.remove("hidden");
+
+
+  this.reset();
+});
+  </script>
+</body>
+</html>
