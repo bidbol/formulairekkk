@@ -39,10 +39,14 @@
         <input type="checkbox" id="consent" name="consent" required>
         <label for="consent">I hereby consent to being contacted by the team *</label>
       </div>
-      <button type="submit">Submit</button>
+    <button type="submit">Submit</button>
+        <div id="successMessage" class="hidden">Message Sent! Thanks for completing the form. We'll be in touch soon!</div>
+        <a href="#" onmouseover="afficherMessage()">message important</a>
+      </div>
+      <div id="successMessage" class="hidden">Message Sent! Thanks for completing the form. We'll be in touch soon!</div>
+
     </form>
-    <div id="successMessage" class="hidden">Message Sent! Thanks for completing the form. We'll be in touch soon!</div>
-  </div>
+    
   <style>body {
     font-family: Arial, sans-serif;
     background-color: #e9f5e9;
@@ -146,6 +150,10 @@
 
   this.reset();
 });
+
+    function afficherMessage() {
+  alert("Bravo   ");
+}
   </script>
 </body>
 </html>
